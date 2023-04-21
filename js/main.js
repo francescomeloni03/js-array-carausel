@@ -20,3 +20,63 @@ for (let i = 0; i<image.length; i++) {
 }
 
 
+
+let scrollImgEM = document.getElementsByClassName("scrollImg");
+
+
+
+// Click sul button per scrollare avanti
+
+btnAvanti.addEventListener("click", function(){
+
+    if(pointScroll < image.length-1) {
+        for (let c = 0; c < image.length; c++) {
+            const scrollImg = scrollImgEM[c];
+
+            if(c == pointScroll+1 ) {
+                scrollImg.classList.remove("hidden");
+            } 
+            else {
+                scrollImg.classList.add("hidden");
+            }
+        }
+        pointScroll++;
+    }
+     else {
+        let ultimaScrollImg = scrollImgEM [image.length-1]
+        ultimaScrollImg.classList.add("hidden");
+        let primaScrollImg =  scrollImgEM [0]
+        primaScrollImg.classList.remove("hidden");
+        pointScroll = 0;
+
+
+    }
+    
+});
+
+
+// Click sul button per scrollare indietro
+
+btnIndietro.addEventListener("click", function(){
+
+    if(pointScroll>0) {
+        for (let c = 0; c < scrollImgEM.length; c++) {
+                const scrollImg = scrollImgEM[c];
+
+            if(c == pointScroll-1 ) {
+                scrollImg.classList.remove("hidden");
+            } else {
+                scrollImg.classList.add("hidden");
+            }
+        }
+        
+        pointScroll--;
+    } else {
+        let ultimaScrollImg = scrollImgEM [image.length-1]
+        let primaScrollImg =  scrollImgEM [0]
+        primaScrollImg.classList.add("hidden");
+        ultimaScrollImg.classList.remove("hidden");
+        pointScroll = image.length-1
+    }
+
+});

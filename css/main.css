@@ -1,0 +1,60 @@
+
+  body{
+    background-color: black;
+  }
+    
+    .container{
+        display: flex;
+        justify-content: center;
+    }
+
+
+    #titolo{
+        color: white;
+        display: flex;
+        justify-content: center;
+    }
+
+    .sizeImg {
+        position: relative;
+        width: 75vh;
+        height: 75vh;
+    }
+
+    img {
+        display: block;
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+    
+    button {
+        width: 50px;
+        height: 50px;
+        color: grey;
+        border-radius: 30px;
+        font-size: 1.5rem;
+      
+    }
+    
+    #indietro{
+        position: absolute;
+        transform: translate(-50%);
+        left: 50%;
+        
+    
+    }
+    #avanti {
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%);
+        bottom: 0%;
+    }
+    
+     button:hover {
+        cursor: pointer;
+    }  
+
+    .hidden{
+        display: none;
+    } 
